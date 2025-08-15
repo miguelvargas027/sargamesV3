@@ -25,6 +25,6 @@ Incluye funcionalidades de catálogo, detalle de producto, carrito de compras y 
 
 **Demos**
 - [Front en Vercel](https://sargames-v3.vercel.app/)
-- [Back en render](https://sargamesv3.onrender.com/)
+- [Back en render](https://sargamesv3.onrender.com/api/productos)
 
 ---
