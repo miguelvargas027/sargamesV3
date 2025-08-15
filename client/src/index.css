@@ -114,6 +114,14 @@ body{
   overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
 }
 
+/* Oculta el buscador del header en pantallas pequeñas */
+@media (max-width: 768px) {
+  .nav .search {
+    display: none;
+  }
+}
+
+
 /* Logo cuadrado con icono centrado */
 .logo-box{
   width: 28px; height: 28px;
