@@ -36,8 +36,9 @@ export const actualizarProducto = async (req, res) => {
   const { id } = req.params;
   const body = { ...req.body };
   if (req.file) {
-    body.imagen = `${getBaseURL(req)}/uploads/${req.file.filename}`; // 👈 absoluta
-  }
+  const path = `uploads/${req.file.filename}`;                
+  body.imagen = `${getBaseURL(req)}/${path}`;                 // <- la añadimos aquí
+}
   const actualizado = await Producto.findByIdAndUpdate(id, body, { new: true });
   if (!actualizado) return res.status(404).json({ message: 'Producto no encontrado' });
   res.json(actualizado);
