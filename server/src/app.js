@@ -21,7 +21,12 @@ app.use('/uploads', express.static(path.resolve(__dirname, '../uploads')));
 
 
 // Middlewares
-app.use(cors({ origin: process.env.CORS_ORIGIN?.split(',') || '*' }));
+app.use(
+  cors({
+    origin: (process.env.FRONTEND_ORIGIN || '').split(',').filter(Boolean),
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use(morgan('dev'));
 
@@ -40,3 +45,4 @@ connectDB(process.env.MONGODB_URI).then(() => {
 });
 
 app.set('trust proxy', 1);
+
